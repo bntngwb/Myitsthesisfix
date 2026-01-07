@@ -100,6 +100,25 @@ export function Sidang({ onChooseHearing, takenHearings, onViewHearingDetail, on
           <p className="text-sm text-gray-500 font-[Roboto]">Kelola jadwal dan informasi sidang Anda</p>
         </div>
 
+        {/* SECTION: Memilih Sidang (CTA) */}
+        <div className="bg-white rounded-lg border border-dashed border-blue-300 p-4 mb-6 flex items-center justify-between gap-4">
+          <div>
+            <h2 className="text-gray-800 font-[Poppins] text-[16px] mb-1">
+              Memilih & Mendaftar Sidang
+            </h2>
+            <p className="text-xs text-gray-500 font-[Roboto]">
+              Pilih jadwal sidang proposal atau sidang akhir yang tersedia sesuai status tugas akhir Anda.
+            </p>
+          </div>
+          <button
+            onClick={onChooseHearing}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-[Inter] hover:bg-blue-700 transition-colors whitespace-nowrap"
+          >
+            <Plus className="w-4 h-4" />
+            Memilih Sidang
+          </button>
+        </div>
+
         {/* Revision Deadline Reminder */}
         {upcomingRevisionDeadlines.length > 0 && (
           <div className="bg-red-50 rounded-lg border border-red-300 p-4 mb-6">
@@ -125,8 +144,7 @@ export function Sidang({ onChooseHearing, takenHearings, onViewHearingDetail, on
                       </p>
                     </div>
                   );
-                })
-}
+                })}
               </div>
             </div>
           </div>

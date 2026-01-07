@@ -231,16 +231,13 @@ export function MainContent({ onNavigate, proposals, takenHearings, onEditPropos
                             <div className="w-8 h-8 rounded-full bg-gray-300 border-2 border-white flex items-center justify-center">
                               <span className="text-white text-xs font-[Poppins]">P2</span>
                             </div>
-                            <div className="w-8 h-8 rounded-full bg-gray-300 border-2 border-white flex items-center justify-center">
-                              <span className="text-white text-xs font-[Poppins]">AD</span>
-                            </div>
                           </div>
                           <span className="text-xs text-yellow-800 font-[Roboto]">
-                            Menunggu persetujuan dari 3 pihak
+                            Menunggu persetujuan dari 2 pihak
                           </span>
                         </div>
                         <p className="text-xs text-yellow-700 font-[Roboto]">
-                          Proposal sedang ditinjau oleh Pembimbing 1, Pembimbing 2, dan Admin
+                          Proposal sedang ditinjau oleh Pembimbing 1 dan Pembimbing 2
                         </p>
                       </div>
                       <button 
@@ -421,7 +418,7 @@ export function MainContent({ onNavigate, proposals, takenHearings, onEditPropos
           <div className="grid grid-cols-3 gap-4">
             {/* Tugas Akhir Card */}
             <div 
-              onClick={() => onNavigate("tugas-akhir")}
+              onClick={() => onNavigate("Tugas Akhir")}
               className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 relative hover:shadow-lg transition-shadow duration-200 cursor-pointer"
             >
               <div className="mb-4">
@@ -442,7 +439,7 @@ export function MainContent({ onNavigate, proposals, takenHearings, onEditPropos
                 if (latestProposal) {
                   onEditProposal(latestProposal);
                 } else {
-                  onNavigate("tugas-akhir");
+                  onNavigate("Tugas Akhir");
                 }
               }}
               className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 relative hover:shadow-lg transition-shadow duration-200 cursor-pointer"
@@ -486,7 +483,7 @@ export function MainContent({ onNavigate, proposals, takenHearings, onEditPropos
                 if (latestHearing) {
                   onViewHearingDetail(latestHearing);
                 } else {
-                  onNavigate("sidang");
+                  onNavigate("Sidang");
                 }
               }}
               className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 relative hover:shadow-lg transition-shadow duration-200 cursor-pointer"

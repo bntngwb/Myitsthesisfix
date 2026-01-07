@@ -35,14 +35,27 @@ interface Proposal {
 }
 
 interface TugasAkhirProps {
-  onCreateProposal: () => void;
   proposals: Proposal[];
+  takenHearings: TakenHearing[];
+  onSelectProposal: (proposal: Proposal | null) => void;
+  onCreateProposal: () => void;
   onEditProposal: (proposal: Proposal) => void;
-  onApproveAll: () => void;
-  onUpdateProposal?: (proposalId: number, updates: Partial<Proposal>) => void;
+  onViewProposal: (proposal: Proposal) => void;
+  hearings: Hearing[];
+  onNavigateToHearing: () => void;
+  onUpdateProposal: (proposalId: number, updates: Partial<Proposal>) => void; // ⬅️ tambah ini
 }
 
-export function TugasAkhir({ onCreateProposal, proposals, onEditProposal, onApproveAll, onUpdateProposal }: TugasAkhirProps) {
+
+export function TugasAkhir({   proposals,
+  takenHearings,
+  onSelectProposal,
+  onCreateProposal,
+  onEditProposal,
+  onViewProposal,
+  hearings,
+  onNavigateToHearing,
+  onUpdateProposal,}: TugasAkhirProps) {
   const [isGuideModalOpen, setIsGuideModalOpen] = useState(false);
 
   // Filter proposals by stage
@@ -99,10 +112,10 @@ export function TugasAkhir({ onCreateProposal, proposals, onEditProposal, onAppr
           ) : (
             proposalStageProposals.map((proposal) => (
               <ProposalCardWithApproval
-                key={proposal.id}
-                proposal={proposal}
-                onEditProposal={onEditProposal}
-                onUpdateProposal={onUpdateProposal}
+    key={proposal.id}
+    proposal={proposal}
+    onEditProposal={onEditProposal}
+    onUpdateProposal={onUpdateProposal} 
               />
             ))
           )}
